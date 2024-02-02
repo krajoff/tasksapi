@@ -3,8 +3,6 @@ package com.example.tasksapi.repository;
 import com.example.tasksapi.model.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import java.util.List;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {

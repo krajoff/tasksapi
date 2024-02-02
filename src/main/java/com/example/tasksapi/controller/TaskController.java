@@ -10,12 +10,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
-    private final TaskService taskService;
+    @Autowired
+    private TaskService taskService;
 
     @Autowired
-    public TaskController(TaskService taskService) {
-        this.taskService = taskService;
-    }
+    private DoerService doerService;
 
     @GetMapping
     public List<Task> getAllTasks() {
@@ -44,5 +43,11 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
+    }
+
+    @PutMapping("/{id}/doer/{doerId}")
+    public Task assignDoerToTask(@PathVariable Long id,
+                                 @PathVariable Long doerId) {
+        return taskService.assignDoer(id, doerId);
     }
 }

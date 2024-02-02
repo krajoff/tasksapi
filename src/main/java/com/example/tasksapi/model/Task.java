@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Table(name = "tasks")
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -22,6 +22,14 @@ public class Task {
     @CreatedDate
     @Column()
     private LocalDate date = LocalDate.now();
+
+    @ManyToOne
+    @JoinColumn(name = "doer_id")
+    private Doer doer;
+
+    public Doer getDoer() {
+        return doer;
+    }
 
     public Long getId() {
         return id;
@@ -45,5 +53,9 @@ public class Task {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public void setDoer(Doer doer) {
+        this.doer =doer;
     }
 }

@@ -3,16 +3,14 @@ package com.example.tasksapi.service;
 import com.example.tasksapi.model.*;
 import com.example.tasksapi.repository.DoerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class DoerServiceImpl implements DoerService{
-    private final DoerRepository doerRepository;
-
+@Service
+public class DoerServiceImpl implements DoerService {
     @Autowired
-    public DoerServiceImpl(DoerRepository doerRepository) {
-        this.doerRepository = doerRepository;
-    }
+    private DoerRepository doerRepository;
 
     @Override
     public List<Doer> getAllDoers() {

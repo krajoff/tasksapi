@@ -15,4 +15,16 @@ SELECT * FROM tasks; <br>
 INSERT INTO tasks (description, status, date) 
 VALUES ('clean', 1, '2022-03-22');
 
-GET http://localhost:8080/api/tasks/status/DONE
+GET /api/tasks <br>
+GET /api/tasks/{id} <br>
+GET /api/tasks/status/{status} <br>
+POST /api/tasks <br>
+PUT /api/tasks/{id} <br>
+DELETE /api/tasks/{id} <br>
+============================= <br>
+
+GET /api/doers <br>
+GET /api/doers/{id} <br>
+POST /api/doers <br>
+PUT /api/doers/{id} <br>
+DELETE /api/doers/{id} <br>
