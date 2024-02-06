@@ -13,6 +13,8 @@ public interface DoerService {
 
     Doer updateDoer(Long id, Doer doer);
 
+    Doer getDoerByName(String name);
+
     void deleteDoer(Long id);
 
 }

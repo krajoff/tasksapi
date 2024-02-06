@@ -37,6 +37,11 @@ public class DoerServiceImpl implements DoerService {
     }
 
     @Override
+    public Doer getDoerByName(String name) {
+        return doerRepository.findByName(name).get(0);
+    }
+
+    @Override
     public void deleteDoer(Long id) {
         getDoerById(id);
         doerRepository.deleteById(id);
