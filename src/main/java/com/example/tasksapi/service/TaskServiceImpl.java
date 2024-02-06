@@ -51,12 +51,11 @@ public class TaskServiceImpl implements TaskService {
         taskRepository.deleteById(id);
     }
 
-    public Task assignDoer(Long id, Long doerId) {
+    public Task addDoer(Long id, Long doerId) {
         Task existingTask = getTaskById(id);
         Doer doer = doerService.getDoerById(doerId);
-        existingTask.setDoer(doer);
+        existingTask.addDoer(doer);
         return taskRepository.save(existingTask);
-
     }
 
 }

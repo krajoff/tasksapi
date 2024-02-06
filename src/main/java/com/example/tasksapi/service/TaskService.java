@@ -18,5 +18,5 @@ public interface TaskService {
 
     void deleteTask(Long id);
 
-    Task assignDoer(Long id, Long doerId);
+    Task addDoer(Long id, Long doerId);
 }

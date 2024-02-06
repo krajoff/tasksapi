@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -23,12 +24,12 @@ public class Task {
     @Column()
     private LocalDate date = LocalDate.now();
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "doer_id")
-    private Doer doer;
+    private List<Doer> doers;
 
-    public Doer getDoer() {
-        return doer;
+    public List<Doer> getDoers() {
+        return doers;
     }
 
     public Long getId() {
@@ -55,7 +56,12 @@ public class Task {
         return date;
     }
 
-    public void setDoer(Doer doer) {
-        this.doer =doer;
+    public void setDoers(List<Doer> doers) {
+        this.doers = doers;
+    }
+
+    public List<Doer> addDoer(Doer doer){
+        doers.add(doer);
+        return doers;
     }
 }

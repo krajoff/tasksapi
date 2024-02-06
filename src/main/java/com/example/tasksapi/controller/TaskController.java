@@ -48,6 +48,6 @@ public class TaskController {
     @PutMapping("/{id}/doer/{doerId}")
     public Task assignDoerToTask(@PathVariable Long id,
                                  @PathVariable Long doerId) {
-        return taskService.assignDoer(id, doerId);
+        return taskService.addDoer(id, doerId);
     }
 }
