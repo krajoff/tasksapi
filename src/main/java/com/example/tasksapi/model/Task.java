@@ -64,4 +64,15 @@ public class Task {
         doers.add(doer);
         return doers;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                ", date=" + date +
+                ", doers=" + doers +
+                '}';
+    }
 }

@@ -1,0 +1,7 @@
+Launch a service: updateTask[4, com.example.tasksapi.model.Task@1d04ce1e]
+Launch a service: updateTask with arguments: [4, com.example.tasksapi.model.Task@33fdca22]
+Launch a service: createTask with arguments: [com.example.tasksapi.model.Task@67d68504]
+Launch a service: createTask with arguments: [Task{id=null, description='create task', status=DONE, date=2024-02-08, doers=null}]
+Launch a service: getAllTasks with arguments: []
+Launch a service: deleteTask with arguments: [6]
+Launch a service: createTask with arguments: [Task{id=null, description='create task', status=DONE, date=2024-02-08, doers=null}]
