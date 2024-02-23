@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tasks")
-public class Task {
+public class Task implements ITask{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -63,6 +63,29 @@ public class Task {
     public List<Doer> addDoer(Doer doer){
         doers.add(doer);
         return doers;
+    }
+
+    public static class TaskBuilder {
+        private final Task task = new Task();
+
+        public TaskBuilder description(String description) {
+            task.setDescription(description);
+            return this;
+        }
+
+        public TaskBuilder status (Status status) {
+            task.setStatus(status);
+            return this;
+        }
+
+        public TaskBuilder doers (List<Doer> doers) {
+            task.setDoers(doers);
+            return this;
+        }
+
+        public Task build() {
+            return task;
+        }
     }
 
     @Override

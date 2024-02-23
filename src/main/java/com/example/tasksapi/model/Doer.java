@@ -2,9 +2,11 @@ package com.example.tasksapi.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "doers")
-public class Doer {
+public class Doer implements IDoer{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,5 +28,17 @@ public class Doer {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    public static class DoerBuilder {
+        private final Doer doer = new Doer();
+
+        public Doer.DoerBuilder name(String name) {
+            doer.setName(name);
+            return this;
+        }
+
+        public Doer build() {
+            return doer;
+        }
     }
 }
